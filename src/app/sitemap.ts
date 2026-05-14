@@ -47,7 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   // Get all categories and their services
-  const categories = await getCategoriesWithMetadata();
+  const categories = getCategoriesWithMetadata();
 
   // Category routes
   const categoryRoutes: MetadataRoute.Sitemap = categories.map((category) => ({
@@ -61,7 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const serviceRoutes: MetadataRoute.Sitemap = [];
 
   for (const category of categories) {
-    const services = await getServicesByCategory(category.id);
+    const services = getServicesByCategory(category.id);
 
     for (const service of services) {
       serviceRoutes.push({

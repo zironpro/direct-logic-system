@@ -2,7 +2,6 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
 import {
   Bosch,
-  CloudUpload,
   CX3,
   Google,
   Instagram,
@@ -12,9 +11,7 @@ import {
   Lg,
   Linkedin,
   Meta,
-  Playstation,
   Seagate,
-  Sennheiser,
   TpLink,
 } from "@/assets/brands";
 import { Logo } from "@/assets/logo";
@@ -33,22 +30,22 @@ export const SliderFeature = () => {
           <div>
             <InfiniteSlider gap={24} speed={20} speedOnHover={10}>
               <IntegrationCard>
-                <Lg className="text-muted-foreground" />
+                <Lg className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Bosch className="text-muted-foreground" />
+                <Bosch className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Leviton className="text-muted-foreground" />
+                <Leviton className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <CX3 className="text-muted-foreground" />
+                <CX3 className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Meta className="text-muted-foreground" />
+                <Meta className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Instagram className="text-muted-foreground" />
+                <Instagram className="text-muted-foreground/50" />
               </IntegrationCard>
             </InfiniteSlider>
           </div>
@@ -56,48 +53,26 @@ export const SliderFeature = () => {
           <div>
             <InfiniteSlider gap={24} reverse speed={20} speedOnHover={10}>
               <IntegrationCard>
-                <Seagate className="text-muted-foreground" />
+                <Seagate className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Google className="text-muted-foreground" />
+                <Google className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <JBL className="text-muted-foreground" />
+                <JBL className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <TpLink className="text-muted-foreground" />
+                <TpLink className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Linkedin className="text-muted-foreground" />
+                <Linkedin className="text-muted-foreground/50" />
               </IntegrationCard>
               <IntegrationCard>
-                <Layout className="text-muted-foreground" />
+                <Layout className="text-muted-foreground/50" />
               </IntegrationCard>
             </InfiniteSlider>
           </div>
-          <div>
-            <InfiniteSlider gap={24} speed={20} speedOnHover={10}>
-              <IntegrationCard>
-                <Playstation className="text-muted-foreground" />
-              </IntegrationCard>
-              <IntegrationCard>
-                <CloudUpload className="text-muted-foreground" />
-              </IntegrationCard>
-              <IntegrationCard>
-                <Sennheiser className="text-muted-foreground" />
-              </IntegrationCard>
-              <IntegrationCard>
-                <Meta className="text-muted-foreground" />
-              </IntegrationCard>
-              <IntegrationCard>
-                <Lg className="text-muted-foreground" />
-              </IntegrationCard>
-              <IntegrationCard>
-                <Seagate className="text-muted-foreground" />
-              </IntegrationCard>
-            </InfiniteSlider>
-          </div>
-          <div className="absolute inset-0 z-10 m-auto flex size-fit justify-center gap-2">
+          <div className="absolute inset-0 z-10 m-auto flex size-fit justify-center gap-2 rounded-full backdrop-blur-lg">
             <IntegrationCard
               className="z-10 size-20 bg-card/25 shadow-black-950/10 shadow-xl backdrop-blur-lg backdrop-grayscale dark:border-white/10"
               isCenter={true}

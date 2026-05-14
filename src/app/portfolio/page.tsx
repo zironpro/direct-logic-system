@@ -93,7 +93,7 @@ export default function PortfolioPage() {
       {/* Hero Section */}
       <BackgroundLeft aria-hidden="true" className="-top-20 -left-20 z-1 md:top-0 md:left-0" />
       <BackgroundRight aria-hidden="true" className="-top-20 -right-20 z-1 md:top-0 md:right-0" />
-      <header className="bg-gradient-to-b from-[#E5CAFF]/30 to-transparent" role="banner">
+      <header className="bg-linear-to-b from-[#E5CAFF]/30 to-transparent" role="banner">
         <div className="container relative z-10 max-w-7xl px-4 pt-16 md:px-6 md:pt-24 lg:px-8 lg:pt-32">
           <div className="mx-auto max-w-4xl text-center">
             <Badge>

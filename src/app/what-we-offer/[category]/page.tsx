@@ -102,7 +102,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 export async function generateStaticParams() {
-  const categories = await getCategoriesWithMetadata();
+  const categories = getCategoriesWithMetadata();
 
   return categories.map((category) => ({
     category: category.id,
@@ -113,7 +113,7 @@ export default async function ServicesCategoryPage({ params }: { params: Promise
   const { category } = await params;
 
   const categoryMetadata = getCategoryMetadata(category);
-  const categoryServices = await getServicesByCategory(category);
+  const categoryServices = getServicesByCategory(category);
 
   return (
     <main className="relative min-h-svh overflow-hidden pt-24">

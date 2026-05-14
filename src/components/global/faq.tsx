@@ -35,11 +35,11 @@ export const Faq = () => {
               value={item.id}
             >
               <AccordionPrimitive.Header className="flex">
-                <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between rounded-md py-2.5 text-left font-medium text-lg leading-6 outline-none transition-all focus-visible:ring-0 [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0 [&[data-state=open]>svg]:rotate-180">
+                <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between rounded-md py-2.5 text-left font-medium leading-6 outline-none transition-all focus-visible:ring-0 md:text-lg [&>svg>path:last-child]:origin-center [&>svg>path:last-child]:transition-all [&>svg>path:last-child]:duration-200 [&[data-state=open]>svg>path:last-child]:rotate-90 [&[data-state=open]>svg>path:last-child]:opacity-0 [&[data-state=open]>svg]:rotate-180">
                   {item.title}
                   <IconPlus
                     aria-hidden="true"
-                    className="pointer-events-none shrink-0 opacity-60 transition-transform duration-200"
+                    className="pointer-events-none size-3 shrink-0 opacity-60 transition-transform duration-200"
                   />
                 </AccordionPrimitive.Trigger>
               </AccordionPrimitive.Header>
@@ -48,8 +48,8 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
           ))}
-          <div className="flex flex-1 items-center justify-between rounded-md border bg-background px-3 py-2.5 text-left font-medium text-lg leading-6 outline-none transition-all last:border-b focus-visible:ring-0 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 md:px-4">
-            <p> Let's talk about your challenges and goals.</p>
+          <div className="flex flex-1 items-center justify-between gap-2 rounded-md border bg-background px-3 py-2.5 text-left font-medium leading-6 outline-none transition-all last:border-b focus-visible:ring-0 has-focus-visible:border-ring has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50 md:px-4 md:text-lg">
+            <p>Let's talk about your challenges and goals.</p>
             <Button asChild>
               <Link href="/contact">Get in touch</Link>
             </Button>

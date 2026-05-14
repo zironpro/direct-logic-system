@@ -66,7 +66,7 @@ export default function AboutPage() {
       <BackgroundRight aria-hidden="true" className="-top-20 -right-20 z-1 md:top-0 md:right-0" />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#E5CAFF]/30 to-transparent pt-16 sm:pt-20">
+      <section className="bg-linear-to-b from-[#E5CAFF]/30 to-transparent pt-16 sm:pt-20">
         <div className="container relative z-10 max-w-4xl px-4 py-8 sm:py-12">
           <Badge>
             <BadgeDot />
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
       {/* Journey Section */}
       <section className="container max-w-4xl px-4 py-6">
-        <div className="rounded-[calc(var(--radius-3xl)+var(--spacing)_*_2)] bg-gradient-to-b from-primary to-85% to-transparent p-2">
+        <div className="rounded-[calc(var(--radius-3xl)+var(--spacing)*2)] bg-linear-to-b from-primary to-85% to-transparent p-2">
           <div className="rounded-3xl bg-card p-6 sm:p-8 md:p-12">
             <Badge className="mx-auto" variant="secondary">
               <BadgeDot />
@@ -156,7 +156,7 @@ export default function AboutPage() {
                 {MISSION_ITEMS.map((item, index) => (
                   <li className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3" key={index}>
                     <div className="flex items-center gap-2 sm:gap-3">
-                      <item.icon className="size-5 flex-shrink-0 text-primary" />
+                      <item.icon className="size-5 shrink-0 text-primary" />
                       <h3 className="font-medium text-sm sm:text-base">{item.title}</h3>
                     </div>
                     <span className="hidden size-1 rounded-full bg-muted-foreground/50 sm:block" />
@@ -185,7 +185,7 @@ export default function AboutPage() {
                 {VISION_ITEMS.map((item, index) => (
                   <li className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3" key={index}>
                     <div className="flex items-center gap-2 sm:gap-3">
-                      <item.icon className="size-5 flex-shrink-0 text-primary" />
+                      <item.icon className="size-5 shrink-0 text-primary" />
                       <h3 className="font-medium text-sm sm:text-base">{item.title}</h3>
                     </div>
                     <span className="hidden size-1 rounded-full bg-muted-foreground/50 sm:block" />

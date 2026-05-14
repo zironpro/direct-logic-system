@@ -96,14 +96,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function WhatWeOfferPage() {
-  const categories = await getCategoriesWithMetadata();
+export default function WhatWeOfferPage() {
+  const categories = getCategoriesWithMetadata();
 
   return (
     <main className="relative min-h-svh overflow-hidden pt-24">
       <BackgroundLeft aria-hidden="true" className="-top-20 -left-20 z-1 md:top-0 md:left-0" />
       <BackgroundRight aria-hidden="true" className="-top-20 -right-20 z-1 md:top-0 md:right-0" />
-      <div className="container relative z-10 max-w-7xl space-y-2 overflow-hidden rounded-4xl bg-radial-[105%_100%_at_50%_0%] from-[#6DA3FF] via-55% via-secondary to-primary px-4 py-12 text-center text-background shadow-[0_12px_42px_0_oklch(0.2788_0.0909_306.27/40%),_inset_0_1px_42px_12px_oklch(1_0_0_/20%)] md:space-y-6 md:px-6 md:py-16 lg:px-8">
+      <div className="container relative z-10 max-w-7xl space-y-2 overflow-hidden rounded-4xl bg-radial-[105%_100%_at_50%_0%] from-[#6DA3FF] via-55% via-secondary to-primary px-4 py-12 text-center text-background shadow-[0_12px_42px_0_oklch(0.2788_0.0909_306.27/40%),inset_0_1px_42px_12px_oklch(1_0_0_/20%)] md:space-y-6 md:px-6 md:py-16 lg:px-8">
         <Badge className="relative z-10" variant="outline">
           <BadgeDot />
           What we offer
@@ -145,52 +145,50 @@ export default async function WhatWeOfferPage() {
         </Breadcrumb>
       </div>
 
-      {
-        await Promise.all(
-          categories.map(async (category) => {
-            const categoryServices = await getServicesByCategory(category.id);
-            const displayedServices = categoryServices.slice(0, 6); // Limit to 4 services
+      {Promise.all(
+        categories.map((category) => {
+          const categoryServices = getServicesByCategory(category.id);
+          const displayedServices = categoryServices.slice(0, 6);
 
-            return (
-              <section className="container max-w-7xl pt-14" key={category.id}>
-                <SectionHeader
-                  badge={category.title}
-                  description={category.description}
-                  link={`/what-we-offer/${category.id}`}
-                  title={category.title}
-                />
-                <div className="grid grid-cols-1 gap-3 py-14 md:grid-cols-2 lg:grid-cols-3">
-                  {displayedServices.map((service) => (
-                    <Card className="group relative transition-all duration-300 hover:shadow-lg" key={service.id}>
-                      <Link className="absolute inset-0 z-10" href={`/what-we-offer/${category.id}/${service.slug}`} />
-                      <CardContent className="flex h-full flex-col p-1">
-                        {service.image && (
-                          <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-md bg-muted">
-                            <Image alt={service.title} className="object-cover" fill src={service.image} />
-                          </div>
-                        )}
-                        <CardHeader className="p-3">
-                          <CardTitle>{service.title}</CardTitle>
-                          <CardDescription>{service.meta.description}</CardDescription>
-                        </CardHeader>
-                      </CardContent>
-                      <CardFooter className="flex items-center justify-between px-2 pb-1">
-                        <CardTitle className="text-muted-foreground text-sm">Explore</CardTitle>
+          return (
+            <section className="container max-w-7xl pt-14" key={category.id}>
+              <SectionHeader
+                badge={category.title}
+                description={category.description}
+                link={`/what-we-offer/${category.id}`}
+                title={category.title}
+              />
+              <div className="grid grid-cols-1 gap-3 py-14 md:grid-cols-2 lg:grid-cols-3">
+                {displayedServices.map((service) => (
+                  <Card className="group relative transition-all duration-300 hover:shadow-lg" key={service.id}>
+                    <Link className="absolute inset-0 z-10" href={`/what-we-offer/${category.id}/${service.slug}`} />
+                    <CardContent className="flex h-full flex-col p-1">
+                      {service.image && (
+                        <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden rounded-md bg-muted">
+                          <Image alt={service.title} className="object-cover" fill src={service.image} />
+                        </div>
+                      )}
+                      <CardHeader className="p-3">
+                        <CardTitle>{service.title}</CardTitle>
+                        <CardDescription>{service.meta.description}</CardDescription>
+                      </CardHeader>
+                    </CardContent>
+                    <CardFooter className="flex items-center justify-between px-2 pb-1">
+                      <CardTitle className="text-muted-foreground text-sm">Explore</CardTitle>
 
-                        <Button asChild size="icon" variant="secondary">
-                          <Link href={`/what-we-offer/${category.id}/${service.slug}`}>
-                            <IconArrowUpRight />
-                          </Link>
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  ))}
-                </div>
-              </section>
-            );
-          })
-        )
-      }
+                      <Button asChild size="icon" variant="secondary">
+                        <Link href={`/what-we-offer/${category.id}/${service.slug}`}>
+                          <IconArrowUpRight />
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          );
+        })
+      )}
 
       <Faq />
       <Cta />

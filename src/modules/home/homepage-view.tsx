@@ -5,7 +5,7 @@ import { About, Hero, Portfolio, Services, Solutions, Testimonials } from "@/mod
 
 export const HomepageView = () => {
   return (
-    <main className="relative overflow-hidden" id="main-content" role="main">
+    <main className="relative overflow-hidden">
       <Hero />
       <About />
       <Services />

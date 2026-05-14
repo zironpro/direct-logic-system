@@ -77,14 +77,12 @@ export const Footer = () => {
       {/* Main content section */}
       <div className="mx-auto mb-16 grid max-w-7xl grid-cols-1 gap-8 sm:mb-24 md:mb-44 lg:mb-72 lg:grid-cols-2 lg:gap-12">
         <div>
-          <h2 className="mb-8 text-pretty text-3xl leading-tight tracking-tight sm:text-4xl lg:mb-12 lg:text-5xl">
+          <h2 className="mb-4 text-pretty text-3xl leading-tight tracking-tight sm:text-4xl lg:mb-12 lg:text-5xl">
             {COMPANY_INFO.tagline}
           </h2>
-          <address className="text-lg text-muted-foreground not-italic leading-relaxed">
+          <address className="text-muted-foreground not-italic leading-relaxed md:text-lg">
             <p>
-              {COMPANY_ADDRESS.street},
-              <br /> {COMPANY_ADDRESS.location}, <br />
-              {COMPANY_ADDRESS.city}
+              {COMPANY_ADDRESS.street}, {COMPANY_ADDRESS.location}, {COMPANY_ADDRESS.city}
             </p>
           </address>
         </div>
