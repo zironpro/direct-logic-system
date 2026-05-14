@@ -9,14 +9,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { IconArrowUpRight } from "@/assets/icons/arrows";
 
 import { getCategoriesWithMetadata, getServicesByCategory } from "@/modules/services/actions";
-import { CategoryMetadata } from "@/modules/services/categories";
 
-interface ServicesProps {
-  categories?: CategoryMetadata[];
-}
-
-export const Services = async ({ categories }: ServicesProps) => {
-  const allCategories = categories || (await getCategoriesWithMetadata());
+export const Services = () => {
+  const allCategories = getCategoriesWithMetadata();
 
   return (
     <section
@@ -33,54 +28,50 @@ export const Services = async ({ categories }: ServicesProps) => {
         className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3"
         role="list"
       >
-        {
-          await Promise.all(
-            allCategories.map(async (category) => {
-              const categoryServices = await getServicesByCategory(category.id);
-              const totalServices = categoryServices.length;
-              const displayedServices = categoryServices.slice(0, 4);
-              const remainingCount = totalServices - 4;
+        {allCategories.map((category) => {
+          const categoryServices = getServicesByCategory(category.id);
+          const totalServices = categoryServices.length;
+          const displayedServices = categoryServices.slice(0, 4);
+          const remainingCount = totalServices - 4;
 
-              return (
-                <Card key={category.id} role="listitem">
-                  <CardContent className="flex h-full flex-col justify-between gap-4">
-                    <CardHeader>
-                      <CardTitle>{category.title}</CardTitle>
-                      <CardDescription>{category.description}</CardDescription>
-                    </CardHeader>
-                    <ul className="flex flex-wrap gap-2">
-                      {displayedServices.map(({ title, slug }) => (
-                        <li key={slug}>
-                          <Link
-                            className="block rounded-md bg-primary-foreground/40 px-2.5 py-1 font-medium text-primary text-xs transition-colors hover:bg-primary-foreground/60"
-                            href={`/what-we-offer/${category.id}/${slug}`}
-                          >
-                            {title}
-                          </Link>
-                        </li>
-                      ))}
-                      {remainingCount > 0 && (
-                        <span className="rounded-md bg-primary-foreground/40 px-2.5 py-1 font-medium text-primary text-xs transition-colors hover:bg-primary-foreground/60">
-                          {remainingCount} +
-                        </span>
-                      )}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
-                    <Button aria-label={`View all ${category.title} services`} asChild size="sm" variant="ghost">
-                      <Link href={`/what-we-offer/${category.id}`}>Explore</Link>
-                    </Button>
-                    <Button asChild size="icon" variant="secondary">
-                      <Link href={`/what-we-offer/${category.id}`}>
-                        <IconArrowUpRight aria-hidden="true" />
+          return (
+            <Card key={category.id} role="listitem">
+              <CardContent className="flex h-full flex-col justify-between gap-4">
+                <CardHeader>
+                  <CardTitle>{category.title}</CardTitle>
+                  <CardDescription>{category.description}</CardDescription>
+                </CardHeader>
+                <ul className="flex flex-wrap gap-2">
+                  {displayedServices.map(({ title, slug }) => (
+                    <li key={slug}>
+                      <Link
+                        className="block rounded-md bg-primary-foreground/40 px-2.5 py-1 font-medium text-primary text-xs transition-colors hover:bg-primary-foreground/60"
+                        href={`/what-we-offer/${category.id}/${slug}`}
+                      >
+                        {title}
                       </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              );
-            })
-          )
-        }
+                    </li>
+                  ))}
+                  {remainingCount > 0 && (
+                    <span className="rounded-md bg-primary-foreground/40 px-2.5 py-1 font-medium text-primary text-xs transition-colors hover:bg-primary-foreground/60">
+                      {remainingCount} +
+                    </span>
+                  )}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button aria-label={`View all ${category.title} services`} asChild size="sm" variant="ghost">
+                  <Link href={`/what-we-offer/${category.id}`}>Explore</Link>
+                </Button>
+                <Button asChild size="icon" variant="secondary">
+                  <Link href={`/what-we-offer/${category.id}`}>
+                    <IconArrowUpRight aria-hidden="true" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          );
+        })}
       </div>
       <div className="flex justify-center">
         <Button
@@ -92,7 +83,7 @@ export const Services = async ({ categories }: ServicesProps) => {
           <Link href="/what-we-offer">
             Explore More
             <div className="size-6 overflow-hidden rounded-full border border-card bg-background/50 text-foreground duration-500 group-hover:bg-muted">
-              <div className="-translate-x-1/2 flex w-12 duration-500 ease-in-out group-hover:translate-x-0">
+              <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
                 <span className="flex size-6">
                   <ArrowRight className="m-auto size-3" />
                 </span>

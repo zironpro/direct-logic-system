@@ -1,11 +1,7 @@
 import { Metadata } from "next";
 
-import { Cta } from "@/components/global/cta";
-import { Faq } from "@/components/global/faq";
-
 import { BASE_URL } from "@/data/site-config";
-import { About, Hero, Portfolio, Services, Solutions, Testimonials } from "@/modules/home/sections";
-import { getCategoriesWithMetadata } from "@/modules/services/actions";
+import { HomepageView } from "@/modules/home/homepage-view";
 
 export const metadata: Metadata = {
   title: "Direct Logic Systems - Leading IT Solutions & Digital Innovation in Dubai, UAE",
@@ -73,11 +69,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google: "41GGxNFJqPyT0BKVNEwJ59WTP2PXdOTEtRqQSwXw9kU",
   },
+
   other: {
     "geo.region": "AE",
     "geo.placename": "Dubai",
@@ -86,26 +82,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
-  const categories = await getCategoriesWithMetadata();
-
-  return (
-    <main className="relative overflow-hidden" id="main-content" role="main">
-      <Hero />
-
-      <About />
-
-      <Services categories={categories} />
-
-      <Solutions />
-
-      <Portfolio />
-
-      <Testimonials />
-
-      <Faq />
-
-      <Cta />
-    </main>
-  );
+export default function Home() {
+  return <HomepageView />;
 }

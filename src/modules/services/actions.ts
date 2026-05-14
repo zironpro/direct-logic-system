@@ -81,7 +81,7 @@ export async function getServiceBySlug(slug: string, category?: string): Promise
   }
 }
 
-export async function getServices(limit?: number, category?: string): Promise<ServiceMetadata[]> {
+export function getServices(limit?: number, category?: string): ServiceMetadata[] {
   let files: string[];
 
   if (category) {
@@ -120,7 +120,7 @@ export async function getServices(limit?: number, category?: string): Promise<Se
   return services;
 }
 
-export async function getCategories(): Promise<string[]> {
+export function getCategories(): string[] {
   const categories = new Set<string>();
 
   const items = fs.readdirSync(root, { withFileTypes: true });
@@ -134,12 +134,12 @@ export async function getCategories(): Promise<string[]> {
   return Array.from(categories).sort();
 }
 
-export async function getServicesByCategory(category: string, limit?: number): Promise<ServiceMetadata[]> {
+export function getServicesByCategory(category: string, limit?: number): ServiceMetadata[] {
   return getServices(limit, category);
 }
 
-export async function getCategoriesWithMetadata(): Promise<CategoryMetadata[]> {
-  const categoryIds = await getCategories();
+export function getCategoriesWithMetadata(): CategoryMetadata[] {
+  const categoryIds = getCategories();
 
   return categoryIds.map((categoryId) => getCategoryMetadata(categoryId));
 }

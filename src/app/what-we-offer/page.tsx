@@ -121,10 +121,10 @@ export default async function WhatWeOfferPage() {
           we&apos;ve got you covered.
         </p>
 
-        <IconDirectWatermark aria-hidden="true" className="-top-3/4 -left-12 absolute hidden text-white/5 lg:block" />
+        <IconDirectWatermark aria-hidden="true" className="absolute -top-3/4 -left-12 hidden text-white/5 lg:block" />
         <IconDirectWatermark
           aria-hidden="true"
-          className="-bottom-3/4 -right-20 -scale-x-90 absolute hidden text-white/5 lg:block"
+          className="absolute -right-20 -bottom-3/4 hidden -scale-x-90 text-white/5 lg:block"
         />
       </div>
 

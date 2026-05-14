@@ -46,11 +46,11 @@ export const Cta = ({ disableBg = false }: Props) => {
         {/* Decorative watermarks - hidden on mobile, visible on larger screens */}
         <IconDirectWatermark
           aria-hidden="true"
-          className="-top-1/2 -left-8 sm:-left-10 md:-left-12 absolute hidden text-white/8 lg:block"
+          className="absolute -top-1/2 -left-8 hidden text-white/8 sm:-left-10 md:-left-12 lg:block"
         />
         <IconDirectWatermark
           aria-hidden="true"
-          className="-bottom-1/2 -right-12 -scale-x-90 sm:-right-16 md:-right-20 absolute hidden text-white/8 lg:block"
+          className="absolute -right-12 -bottom-1/2 hidden -scale-x-90 text-white/8 sm:-right-16 md:-right-20 lg:block"
         />
 
         {/* Decorative icons with responsive sizing and positioning */}
@@ -59,12 +59,12 @@ export const Cta = ({ disableBg = false }: Props) => {
             <div className="flex size-10 rotate-6 items-center justify-center rounded-xl bg-card shadow-[0_4px_16px_0] shadow-primary-background/30 sm:size-16 sm:rotate-9 sm:rounded-2xl sm:shadow-[0_6px_20px_0] md:size-20 md:shadow-[0_8px_24px_0]">
               <IconCloud className="size-5 sm:size-6 md:size-12" />
             </div>
-            <div className="-rotate-8 sm:-rotate-12 flex size-10 items-center justify-center rounded-xl bg-card shadow-[0_4px_16px_0] shadow-primary-background/30 sm:size-16 sm:rounded-2xl sm:shadow-[0_6px_20px_0] md:size-20 md:shadow-[0_8px_24px_0]">
+            <div className="flex size-10 -rotate-8 items-center justify-center rounded-xl bg-card shadow-[0_4px_16px_0] shadow-primary-background/30 sm:size-16 sm:-rotate-12 sm:rounded-2xl sm:shadow-[0_6px_20px_0] md:size-20 md:shadow-[0_8px_24px_0]">
               <IconGlobe className="size-5 sm:size-6 md:size-12" />
             </div>
           </div>
           <div className="flex items-center justify-between px-4 sm:px-8 md:px-16">
-            <div className="-rotate-6 sm:-rotate-9 flex size-10 items-center justify-center rounded-xl bg-card shadow-[0_4px_16px_0] shadow-primary-background/30 sm:size-16 sm:rounded-2xl sm:shadow-[0_6px_20px_0] md:size-20 md:shadow-[0_8px_24px_0]">
+            <div className="flex size-10 -rotate-6 items-center justify-center rounded-xl bg-card shadow-[0_4px_16px_0] shadow-primary-background/30 sm:size-16 sm:-rotate-9 sm:rounded-2xl sm:shadow-[0_6px_20px_0] md:size-20 md:shadow-[0_8px_24px_0]">
               <IconLoudspeaker className="size-5 sm:size-6 md:size-12" />
             </div>
             <div className="flex size-10 rotate-4 items-center justify-center rounded-xl bg-card shadow-[0_4px_16px_0] shadow-primary-background/30 sm:size-16 sm:rotate-6 sm:rounded-2xl sm:shadow-[0_6px_20px_0] md:size-20 md:shadow-[0_8px_24px_0]">

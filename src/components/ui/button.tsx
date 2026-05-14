@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "before:-translate-x-1/2 overflow-hidden border border-primary bg-gradient-to-tr from-foreground via-foreground to-muted-foreground text-shadow-primary-background text-shadow-xs text-white shadow-md shadow-primary/20 before:absolute before:left-0 before:size-5 before:rounded-full before:bg-primary before:blur-md after:absolute after:left-0 after:h-3.5 after:w-0.5 after:rounded-r-full after:bg-primary hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/10",
+          "overflow-hidden border border-primary bg-gradient-to-tr from-foreground via-foreground to-muted-foreground text-shadow-primary-background text-shadow-xs text-white shadow-md shadow-primary/20 before:absolute before:left-0 before:size-5 before:-translate-x-1/2 before:rounded-full before:bg-primary before:blur-md after:absolute after:left-0 after:h-3.5 after:w-0.5 after:rounded-r-full after:bg-primary hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/10",
         primary:
           "border border-primary-foreground bg-gradient-to-b from-[oklch(0.6966_0.1806_296.02)] to-[oklch(0.5367_0.2669_282.67)] font-bold text-shadow-primary-background text-shadow-xs text-white shadow-md shadow-primary/20 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/10",
         destructive:

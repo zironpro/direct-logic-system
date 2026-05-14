@@ -16,14 +16,14 @@ export const Solutions = () => {
       </p>
       <div
         aria-label="Technology solutions"
-        className="md:-space-x-9 mt-8 grid grid-cols-1 max-md:space-y-6 md:mt-12 md:grid-cols-2 lg:grid-cols-3"
+        className="mt-8 grid grid-cols-1 max-md:space-y-6 md:mt-12 md:grid-cols-2 md:-space-x-9 lg:grid-cols-3"
         role="list"
       >
         {SOLUTIONS.map(({ id, title, description, icon: Icon }, i) => (
           <div
             className={cn(
               "z-10 h-fit rounded-2xl border border-[#83B0FF] bg-card p-6 md:px-14 md:py-12",
-              i === 0 && "md:-rotate-6 z-0 md:mt-14",
+              i === 0 && "z-0 md:mt-14 md:-rotate-6",
               i === 1
                 ? "shadow-primary/10 shadow-xl md:shadow-2xl md:shadow-primary/30"
                 : "shadow-primary/10 shadow-xl",

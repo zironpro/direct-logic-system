@@ -4,7 +4,7 @@ export const BackgroundLeft = (props: SVGProps) => {
   return (
     <svg
       {...props}
-      className={cn("-z-10 absolute", props.className)}
+      className={cn("absolute -z-10", props.className)}
       fill="none"
       height="541"
       viewBox="0 0 474 541"
@@ -178,7 +178,7 @@ export const BackgroundRight = (props: SVGProps) => {
   return (
     <svg
       {...props}
-      className={cn("-z-10 absolute", props.className)}
+      className={cn("absolute -z-10", props.className)}
       fill="none"
       height="541"
       viewBox="0 0 546 541"

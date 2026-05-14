@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 import Link from "next/link";
+import Script from "next/script";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -80,9 +81,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google: "41GGxNFJqPyT0BKVNEwJ59WTP2PXdOTEtRqQSwXw9kU",
   },
   other: {
     "geo.region": "AE",
@@ -112,7 +111,7 @@ export default function RootLayout({
     <html className={cn("no-scrollbar scroll-smooth")} lang="en">
       <head>
         {/* Structured Data */}
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -152,6 +151,7 @@ export default function RootLayout({
               },
             }),
           }}
+          id="structured-data"
           type="application/ld+json"
         />
       </head>

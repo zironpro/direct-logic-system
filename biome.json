@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
@@ -104,6 +104,11 @@
   },
 
   "html": { "formatter": { "selfCloseVoidElements": "always" } },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "assist": {
     "enabled": true,
     "actions": {
@@ -113,7 +118,7 @@
           "level": "on",
           "options": {
             "groups": [
-              ":TYPES:",
+              { "type": true },
               ["react", "react/**"],
               ["next", "next/**"],
               ":BLANK_LINE:",

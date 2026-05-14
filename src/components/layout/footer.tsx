@@ -179,7 +179,7 @@ export const Footer = () => {
 
       <WordWatermark
         aria-hidden="true"
-        className="-translate-x-1/2 pointer-events-none absolute bottom-0 left-1/2 mx-auto h-auto w-full sm:w-[92%]"
+        className="pointer-events-none absolute bottom-0 left-1/2 mx-auto h-auto w-full -translate-x-1/2 sm:w-[92%]"
       />
     </footer>
   );
