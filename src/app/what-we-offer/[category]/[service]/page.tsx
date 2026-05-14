@@ -122,11 +122,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 export async function generateStaticParams() {
-  const categories = await getCategoriesWithMetadata();
+  const categories = getCategoriesWithMetadata();
   const params: { category: string; service: string }[] = [];
 
   for (const category of categories) {
-    const services = await getServicesByCategory(category.id);
+    const services = getServicesByCategory(category.id);
 
     for (const service of services) {
       params.push({
@@ -142,7 +142,7 @@ export async function generateStaticParams() {
 export default async function ServicePage({ params }: { params: Promise<Params> }) {
   const { category, service } = await params;
   // Fetch service data using the await service function
-  const serviceData = await getServiceBySlug(service, category);
+  const serviceData = getServiceBySlug(service, category);
 
   if (!serviceData) {
     notFound();

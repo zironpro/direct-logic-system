@@ -1,9 +1,7 @@
-import Link from "next/link";
-
 import { VariantProps } from "class-variance-authority";
 
 import { Badge, BadgeDot, badgeVariants } from "../ui/badge";
-import { Button } from "../ui/button";
+import { SectionHeaderExploreAll } from "./section-header-explore-all";
 
 interface Props {
   title: string;
@@ -32,11 +30,7 @@ export const SectionHeader = ({ title, description, badge, variant, link }: Prop
         <p className="text-balance text-base text-muted-foreground" id="section-description">
           {description}
         </p>
-        {link && (
-          <Button asChild className="mt-2">
-            <Link href={link}>Explore All</Link>
-          </Button>
-        )}
+        {link ? <SectionHeaderExploreAll href={link} /> : null}
       </div>
     </header>
   );

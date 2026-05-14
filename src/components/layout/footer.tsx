@@ -1,11 +1,10 @@
-import Link from "next/link";
-
 import { IconBrandFacebook, IconBrandInstagram, IconBrandLinkedin, IconBrandX } from "@/assets/icons/brands";
 import { IconLogo, LogoWordmark, WordWatermark } from "@/assets/logo";
 
 import { COMPANY_ADDRESS, COMPANY_INFO, CONTACT_INFO, NAVIGATION_LINKS, SOCIAL_LINKS } from "@/data/footer";
 
 import { Separator } from "../ui/separator";
+import { FooterTrackedLink } from "./footer-tracked-link";
 
 export const Footer = () => {
   return (
@@ -21,48 +20,52 @@ export const Footer = () => {
           <nav aria-label="Social media links">
             <ul className="flex items-center gap-3">
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label="Visit our LinkedIn page"
                   className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_social_linkedin"
                   href={SOCIAL_LINKS.linkedin}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <IconBrandLinkedin aria-hidden="true" />
-                </Link>
+                </FooterTrackedLink>
               </li>
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label="Visit our Facebook page"
                   className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_social_facebook"
                   href={SOCIAL_LINKS.facebook}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <IconBrandFacebook aria-hidden="true" />
-                </Link>
+                </FooterTrackedLink>
               </li>
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label="Visit our Instagram page"
                   className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_social_instagram"
                   href={SOCIAL_LINKS.instagram}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <IconBrandInstagram aria-hidden="true" />
-                </Link>
+                </FooterTrackedLink>
               </li>
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label="Visit our X (Twitter) page"
                   className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_social_x"
                   href={SOCIAL_LINKS.x}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <IconBrandX aria-hidden="true" />
-                </Link>
+                </FooterTrackedLink>
               </li>
             </ul>
           </nav>
@@ -95,12 +98,13 @@ export const Footer = () => {
             <ul className="space-y-3 font-medium text-base sm:space-y-4 sm:text-lg">
               {NAVIGATION_LINKS.quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <FooterTrackedLink
                     className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                    cta_id="footer_quick_link"
                     href={link.href}
                   >
                     {link.label}
-                  </Link>
+                  </FooterTrackedLink>
                 </li>
               ))}
             </ul>
@@ -111,12 +115,13 @@ export const Footer = () => {
             <ul className="space-y-3 font-medium text-base sm:space-y-4 sm:text-lg">
               {NAVIGATION_LINKS.company.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <FooterTrackedLink
                     className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                    cta_id="footer_company_link"
                     href={link.href}
                   >
                     {link.label}
-                  </Link>
+                  </FooterTrackedLink>
                 </li>
               ))}
             </ul>
@@ -126,31 +131,34 @@ export const Footer = () => {
             <h3 className="mb-3 font-medium text-muted-foreground text-sm">Contact</h3>
             <ul className="space-y-3 font-medium text-base sm:space-y-4 sm:text-lg">
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label={`Call us at ${CONTACT_INFO.phone1}`}
                   className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_contact_phone_primary"
                   href={`tel:${CONTACT_INFO.phone1.replace(/\s/g, "")}`}
                 >
                   {CONTACT_INFO.phone1}
-                </Link>
+                </FooterTrackedLink>
               </li>
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label={`Call us at ${CONTACT_INFO.phone2}`}
                   className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_contact_phone_secondary"
                   href={`tel:${CONTACT_INFO.phone2.replace(/\s/g, "")}`}
                 >
                   {CONTACT_INFO.phone2}
-                </Link>
+                </FooterTrackedLink>
               </li>
               <li>
-                <Link
+                <FooterTrackedLink
                   aria-label={`Email us at ${CONTACT_INFO.email}`}
                   className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  cta_id="footer_contact_email"
                   href={`mailto:${CONTACT_INFO.email}`}
                 >
                   {CONTACT_INFO.email}
-                </Link>
+                </FooterTrackedLink>
               </li>
             </ul>
           </div>
@@ -165,15 +173,16 @@ export const Footer = () => {
         </p>
         <p className="text-muted-foreground text-sm">
           Website Designed & Developed by{" "}
-          <Link
+          <FooterTrackedLink
             aria-label={`Visit ${COMPANY_INFO.developer.name} website (opens in new tab)`}
             className="rounded text-primary-background transition-colors hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            cta_id="footer_developer_credit"
             href={COMPANY_INFO.developer.url}
             rel="noopener noreferrer"
             target="_blank"
           >
             {COMPANY_INFO.developer.name}
-          </Link>
+          </FooterTrackedLink>
         </p>
       </div>
 

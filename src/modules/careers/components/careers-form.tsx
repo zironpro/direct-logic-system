@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useOpenPanel } from "@openpanel/nextjs";
 import { useForm } from "react-hook-form";
 import { z } from "zod/v4";
 
@@ -12,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { careersSchema } from "../actions/careers-schema";
 
 export const CareersForm = () => {
+  const op = useOpenPanel();
   const form = useForm<z.infer<typeof careersSchema>>({
     resolver: zodResolver(careersSchema),
     defaultValues: {
@@ -26,8 +28,10 @@ export const CareersForm = () => {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof careersSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    op.track("careers_form_submitted", {
+      has_resume: Boolean(values.resume),
+      has_message: values.message.trim().length > 0,
+    });
     console.log(values);
   }
 

@@ -74,10 +74,7 @@
         "useNumberNamespace": "error",
         "noInferrableTypes": "error",
         "noUselessElse": "error",
-        "useTemplate": "error",
-        "noProcessEnv": {
-          "level": "error"
-        }
+        "useTemplate": "error"
       },
       "suspicious": {
         "noExplicitAny": "error",

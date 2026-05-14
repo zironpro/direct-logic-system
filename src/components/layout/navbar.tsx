@@ -6,13 +6,15 @@ import { IconMenu } from "@/assets/icons/menu";
 import { Logo, LogoWordmark } from "@/assets/logo";
 
 import { useMobileMenu } from "@/hooks/use-mobile-menu";
+import { useTrackUiAnalytics } from "@/lib/analytics-ui";
 
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { NavLinks } from "./ui/nav-links";
 
 export const Navbar = () => {
-  const { isOpen: isMobileMenuOpen, toggle: toggleMobileMenu, close: closeMobileMenu } = useMobileMenu();
+  const { isOpen: isMobileMenuOpen, setOpen: setMobileMenuOpen, close: closeMobileMenu } = useMobileMenu();
+  const { trackButtonClick, trackCtaClick } = useTrackUiAnalytics();
 
   return (
     <header className="fixed top-1.5 left-1/2 z-999 mx-auto min-w-[95%] -translate-x-1/2 sm:top-3 lg:min-w-3xl">
@@ -38,7 +40,17 @@ export const Navbar = () => {
           <NavLinks />
 
           <Button asChild className="hidden md:inline-flex" size="lg" variant="primary">
-            <Link aria-label="Contact us" href="/contact">
+            <Link
+              aria-label="Contact us"
+              href="/contact"
+              onClick={() =>
+                trackCtaClick({
+                  cta_id: "navbar_contact",
+                  href: "/contact",
+                  placement: "navbar_desktop",
+                })
+              }
+            >
               Contact
             </Link>
           </Button>
@@ -46,11 +58,33 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
             <Button asChild size="lg" variant="primary">
-              <Link aria-label="Contact us" href="/contact">
+              <Link
+                aria-label="Contact us"
+                href="/contact"
+                onClick={() =>
+                  trackCtaClick({
+                    cta_id: "navbar_contact",
+                    href: "/contact",
+                    placement: "navbar_mobile",
+                  })
+                }
+              >
                 Contact
               </Link>
             </Button>
-            <Sheet onOpenChange={toggleMobileMenu} open={isMobileMenuOpen}>
+            <Sheet
+              onOpenChange={(next) => {
+                if (next) {
+                  trackButtonClick({
+                    cta_id: "mobile_menu_toggle",
+                    href: "#",
+                    placement: "navbar",
+                  });
+                }
+                setMobileMenuOpen(next);
+              }}
+              open={isMobileMenuOpen}
+            >
               <SheetTrigger asChild>
                 <Button
                   aria-controls="mobile-menu"
@@ -85,13 +119,24 @@ export const Navbar = () => {
 
                   {/* Mobile Navigation Links */}
                   <div className="flex-1 space-y-1 pt-4">
-                    <NavLinks mobile />
+                    <NavLinks mobile onNavItemClick={closeMobileMenu} />
                   </div>
 
                   {/* Mobile Contact Button */}
                   <div className="border-border border-t pt-4">
                     <Button asChild className="w-full justify-center" size="lg" variant="primary">
-                      <Link aria-label="Contact us" href="/contact" onClick={closeMobileMenu}>
+                      <Link
+                        aria-label="Contact us"
+                        href="/contact"
+                        onClick={() => {
+                          trackCtaClick({
+                            cta_id: "navbar_contact",
+                            href: "/contact",
+                            placement: "navbar_mobile",
+                          });
+                          closeMobileMenu();
+                        }}
+                      >
                         Contact
                       </Link>
                     </Button>

@@ -21,6 +21,9 @@ importers:
       '@number-flow/react':
         specifier: ^0.6.0
         version: 0.6.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      '@openpanel/nextjs':
+        specifier: ^1.5.1
+        version: 1.5.1(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@radix-ui/react-slot':
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.14)(react@19.2.6)
@@ -422,6 +425,19 @@ packages:
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
+
+  '@openpanel/nextjs@1.5.1':
+    resolution: {integrity: sha512-60vhKw29weFWmwntx/cSIYU1TcwNzRykeg8P70onr3jzeyMGsEd78d/wgF5Mp/NIxQDN0IT4LneS6hIDIyrTpw==}
+    peerDependencies:
+      next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  '@openpanel/sdk@1.3.1':
+    resolution: {integrity: sha512-mQ5xaBUGXnyRg3qYxwnbVaUYyW7w8u+munrWk/ClnqxEeR2j+FYPiA6noHbHMCFC2aZutYD5OoRzEvw3FBNFxw==}
+
+  '@openpanel/web@1.4.1':
+    resolution: {integrity: sha512-DgUWeocZw+b57YiJjefZPg+6sceR7TdOF8x7Ut75lu3CwcwqGi5jZNPXjikNemGL37aNWXCB4buhcoNan2j7RA==}
 
   '@radix-ui/number@1.1.1':
     resolution: {integrity: sha512-MkKCwxlXTgz6CFoJx3pCwn07GKp36+aZyu/u2Ln2VrA5DcdyCZkASEDBTd8x5whTQQL5CiYf4prXKLcgQdv29g==}
@@ -1122,6 +1138,12 @@ packages:
   '@radix-ui/rect@1.1.1':
     resolution: {integrity: sha512-HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==}
 
+  '@rrweb/types@2.0.0-alpha.20':
+    resolution: {integrity: sha512-RbnDgKxA/odwB1R4gF7eUUj+rdSrq6ROQJsnMw7MIsGzlbSYvJeZN8YY4XqU0G6sKJvXI6bSzk7w/G94jNwzhw==}
+
+  '@rrweb/utils@2.0.0-alpha.20':
+    resolution: {integrity: sha512-MTQOmhPRe39C0fYaCnnVYOufQsyGzwNXpUStKiyFSfGLUJrzuwhbRoUAKR5w6W2j5XuA0bIz3ZDIBztkquOhLw==}
+
   '@standard-schema/utils@0.3.0':
     resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
@@ -1221,6 +1243,9 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
+  '@types/css-font-loading-module@0.0.7':
+    resolution: {integrity: sha512-nl09VhutdjINdWyXxHWN/w9zlNCfr60JUqJbd24YXUuCwgeL0TpFSdElCwb6cxfB6ybE19Gjj4g0jsgkXxKv1Q==}
+
   '@types/debug@4.1.13':
     resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
 
@@ -1262,6 +1287,9 @@ packages:
   '@ungap/structured-clone@1.3.1':
     resolution: {integrity: sha512-mUFwbeTqrVgDQxFveS+df2yfap6iuP20NAKAsBt5jDEoOTDew+zwLAOilHCeQJOVSvmgCX4ogqIrA0mnyr08yQ==}
 
+  '@xstate/fsm@1.6.5':
+    resolution: {integrity: sha512-b5o1I6aLNeYlU/3CPlj/Z91ybk1gUsKT+5NAJI+2W4UjvS5KLG28K9v5UvNoFVjHV8PajVZ00RH3vnjyQO7ZAw==}
+
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -1285,6 +1313,10 @@ packages:
 
   bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
+
+  base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
 
   baseline-browser-mapping@2.10.29:
     resolution: {integrity: sha512-Asa2krT+XTPZINCS+2QcyS8WTkObE77RwkydwF7h6DmnKqbvlalz93m/dnphUyCa6SWSP51VgtEUf2FN+gelFQ==}
@@ -1722,6 +1754,9 @@ packages:
   micromark@4.0.2:
     resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
 
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+
   motion-dom@12.38.0:
     resolution: {integrity: sha512-pdkHLD8QYRp8VfiNLb8xIBJis1byQ9gPT3Jnh2jqfFtAsWUA3dEepDlsWe/xMpO8McV+VdpKVcp+E+TGJEtOoA==}
 
@@ -1899,6 +1934,15 @@ packages:
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
+
+  rrdom@2.0.0-alpha.20:
+    resolution: {integrity: sha512-hoqjS4662LtBp82qEz9GrqU36UpEmCvTA2Hns3qdF7cklLFFy3G+0Th8hLytJENleHHWxsB5nWJ3eXz5mSRxdQ==}
+
+  rrweb-snapshot@2.0.0-alpha.20:
+    resolution: {integrity: sha512-YTNf9YVeaGRo/jxY3FKBge2c/Ojd/KTHmuWloUSB+oyPXuY73ZeeG873qMMmhIpqEn7hn7aBF1eWEQmP7wjf8A==}
+
+  rrweb@2.0.0-alpha.20:
+    resolution: {integrity: sha512-CZKDlm+j1VA50Ko3gnMbpvguCAleljsTNXPnVk9aeNP8o6T6kolRbISHyDZpqZ4G+bdDLlQOignPP3jEsXs8Gg==}
 
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
@@ -2332,6 +2376,21 @@ snapshots:
       number-flow: 0.6.0
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
+
+  '@openpanel/nextjs@1.5.1(next@16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
+    dependencies:
+      '@openpanel/web': 1.4.1
+      next: 16.2.6(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+
+  '@openpanel/sdk@1.3.1': {}
+
+  '@openpanel/web@1.4.1':
+    dependencies:
+      '@openpanel/sdk': 1.3.1
+      '@rrweb/types': 2.0.0-alpha.20
+      rrweb: 2.0.0-alpha.20
 
   '@radix-ui/number@1.1.1': {}
 
@@ -3087,6 +3146,10 @@ snapshots:
 
   '@radix-ui/rect@1.1.1': {}
 
+  '@rrweb/types@2.0.0-alpha.20': {}
+
+  '@rrweb/utils@2.0.0-alpha.20': {}
+
   '@standard-schema/utils@0.3.0': {}
 
   '@swc/helpers@0.5.15':
@@ -3167,6 +3230,8 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.3.0
 
+  '@types/css-font-loading-module@0.0.7': {}
+
   '@types/debug@4.1.13':
     dependencies:
       '@types/ms': 2.1.0
@@ -3207,6 +3272,8 @@ snapshots:
 
   '@ungap/structured-clone@1.3.1': {}
 
+  '@xstate/fsm@1.6.5': {}
+
   acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
       acorn: 8.16.0
@@ -3224,6 +3291,8 @@ snapshots:
   astring@1.9.0: {}
 
   bail@2.0.2: {}
+
+  base64-arraybuffer@1.0.2: {}
 
   baseline-browser-mapping@2.10.29: {}
 
@@ -3920,6 +3989,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  mitt@3.0.1: {}
+
   motion-dom@12.38.0:
     dependencies:
       motion-utils: 12.36.0
@@ -4195,6 +4266,25 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
+
+  rrdom@2.0.0-alpha.20:
+    dependencies:
+      rrweb-snapshot: 2.0.0-alpha.20
+
+  rrweb-snapshot@2.0.0-alpha.20:
+    dependencies:
+      postcss: 8.5.14
+
+  rrweb@2.0.0-alpha.20:
+    dependencies:
+      '@rrweb/types': 2.0.0-alpha.20
+      '@rrweb/utils': 2.0.0-alpha.20
+      '@types/css-font-loading-module': 0.0.7
+      '@xstate/fsm': 1.6.5
+      base64-arraybuffer: 1.0.2
+      mitt: 3.0.1
+      rrdom: 2.0.0-alpha.20
+      rrweb-snapshot: 2.0.0-alpha.20
 
   scheduler@0.27.0: {}
 

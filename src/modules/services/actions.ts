@@ -41,7 +41,7 @@ function getCategoryFromPath(filePath: string): string {
   return "";
 }
 
-export async function getServiceBySlug(slug: string, category?: string): Promise<Service | null> {
+export function getServiceBySlug(slug: string, category?: string): Service | null {
   try {
     let filePath: string;
 

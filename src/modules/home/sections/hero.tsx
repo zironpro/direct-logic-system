@@ -1,13 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Badge, BadgeDot } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
 import { BackgroundLeft, BackgroundRight } from "@/assets/background";
-import { IconPhone } from "@/assets/icons/contact";
 
 import { ClientsLogos } from "../components/clients-roll";
+import { HeroCtas } from "../components/hero-ctas";
 
 export const Hero = () => {
   return (
@@ -27,36 +25,7 @@ export const Hero = () => {
             From IT infrastructure to trading solutions, software, and digital marketing, we deliver innovation,
             reliability, and growth for your business.
           </p>
-          <div className="flex items-start gap-3 sm:items-center sm:gap-4">
-            <Button
-              aria-label="Contact us to discuss your technology needs"
-              asChild
-              className="group w-full max-md:flex-1 sm:w-auto"
-              size="lg"
-            >
-              <Link href="/contact">
-                <div className="size-6 overflow-hidden rounded-full bg-primary-foreground text-foreground duration-500 group-hover:bg-muted">
-                  <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                    <span className="flex size-6">
-                      <IconPhone className="m-auto size-3" />
-                    </span>
-                    <span className="flex size-6">
-                      <IconPhone className="m-auto size-3" />
-                    </span>
-                  </div>
-                </div>
-                Talk to us
-              </Link>
-            </Button>
-            <Button
-              aria-label="View our portfolio of successful projects"
-              className="w-full max-md:flex-1 sm:w-auto"
-              size="lg"
-              variant="outline"
-            >
-              <Link href="/portfolio">View Portfolio</Link>
-            </Button>
-          </div>
+          <HeroCtas />
         </div>
 
         <div className="flex items-center justify-center">

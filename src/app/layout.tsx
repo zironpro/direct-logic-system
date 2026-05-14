@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+
+import { OpenPanelComponent } from "@openpanel/nextjs";
 import "./globals.css";
 
 import Link from "next/link";
@@ -11,6 +13,7 @@ import Providers from "@/components/providers";
 import { helvetica } from "@/assets/fonts";
 
 import { BASE_URL } from "@/data/site-config";
+import { isOpenPanelEnabled, openPanelApiUrl, openPanelClientId } from "@/lib/openpanel-config";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -156,6 +159,14 @@ export default function RootLayout({
         />
       </head>
       <body className={cn("antialiased", helvetica.className)}>
+        {isOpenPanelEnabled ? (
+          <OpenPanelComponent
+            clientId={openPanelClientId}
+            trackOutgoingLinks
+            trackScreenViews
+            {...(openPanelApiUrl ? { apiUrl: openPanelApiUrl } : {})}
+          />
+        ) : null}
         <Providers>
           <Link
             className="sr-only z-50 rounded-md bg-primary px-4 py-2 text-background focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:px-4 focus:py-2"

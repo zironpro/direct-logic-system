@@ -1,8 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useOpenPanel } from "@openpanel/nextjs";
 import { useForm } from "react-hook-form";
-import { z } from "zod/v4";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -12,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { contactSchema } from "../actions/contact-scema";
 
 export const ContactForm = () => {
+  const op = useOpenPanel();
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -25,8 +27,13 @@ export const ContactForm = () => {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof contactSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    const subjectLen = values.subject.length;
+    const subject_length_bucket = subjectLen < 20 ? "short" : subjectLen < 60 ? "medium" : "long";
+    op.track("contact_form_submitted", {
+      has_email: Boolean(values.email?.trim()),
+      has_phone: Boolean(values.phone?.trim()),
+      subject_length_bucket,
+    });
     console.log(values);
   }
 

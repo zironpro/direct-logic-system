@@ -6,14 +6,18 @@ import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 
 import { NAV_LINKS } from "@/data/constant";
+import { useTrackUiAnalytics } from "@/lib/analytics-ui";
 import { cn } from "@/lib/utils";
 
 interface NavLinksProps {
   mobile?: boolean;
+  onNavItemClick?: () => void;
 }
 
-export const NavLinks = ({ mobile = false }: NavLinksProps) => {
+export const NavLinks = ({ mobile = false, onNavItemClick }: NavLinksProps) => {
   const pathname = usePathname();
+  const { trackButtonClick } = useTrackUiAnalytics();
+  const placement = mobile ? "navbar_mobile" : "navbar_desktop";
 
   if (mobile) {
     return (
@@ -32,6 +36,14 @@ export const NavLinks = ({ mobile = false }: NavLinksProps) => {
                   isActive && "bg-primary/10 text-foreground"
                 )}
                 href={link.href}
+                onClick={() => {
+                  trackButtonClick({
+                    cta_id: "nav_link",
+                    href: link.href,
+                    placement,
+                  });
+                  onNavItemClick?.();
+                }}
                 role="menuitem"
               >
                 {link.label}
@@ -58,6 +70,13 @@ export const NavLinks = ({ mobile = false }: NavLinksProps) => {
                 isActive && "text-foreground"
               )}
               href={link.href}
+              onClick={() =>
+                trackButtonClick({
+                  cta_id: "nav_link",
+                  href: link.href,
+                  placement,
+                })
+              }
               role="menuitem"
             >
               <span className="relative z-10">{link.label}</span>
