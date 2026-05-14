@@ -33,7 +33,7 @@ export const Solutions = () => {
             role="listitem"
           >
             <div className="flex items-center gap-3">
-              <div className="flex size-14 items-center justify-center rounded-xl bg-gradient-to-b from-[#A981FF] to-[#653AFF]">
+              <div className="flex size-14 items-center justify-center rounded-xl bg-linear-to-b from-[#A981FF] to-[#653AFF]">
                 <Icon />
               </div>
               <h3 className="font-medium text-lg md:text-4xl">{title}</h3>
