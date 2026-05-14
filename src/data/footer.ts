@@ -35,7 +35,7 @@ export const COMPANY_INFO = {
   name: "Direct Logic Systems LLC",
   tagline: "Don't settle for good, let's go for amazing, together",
   developer: {
-    name: "Ziron Media",
-    url: "https://www.zironmedia.com",
+    name: "Ziron Pro Digital Solutions",
+    url: "https://zironpro.ae/?utm_source=direct-logic-systems&utm_medium=footer-link&utm_campaign=brand-credit",
   },
 } as const;

@@ -77,7 +77,7 @@ export const Footer = () => {
       {/* Main content section */}
       <div className="mx-auto mb-16 grid max-w-7xl grid-cols-1 gap-8 sm:mb-24 md:mb-44 lg:mb-72 lg:grid-cols-2 lg:gap-12">
         <div>
-          <h2 className="mb-4 text-pretty text-3xl leading-tight tracking-tight sm:text-4xl lg:mb-12 lg:text-5xl">
+          <h2 className="mb-3 text-pretty text-3xl leading-tight tracking-tight sm:text-4xl lg:mb-12 lg:text-5xl">
             {COMPANY_INFO.tagline}
           </h2>
           <address className="text-muted-foreground not-italic leading-relaxed md:text-lg">
@@ -170,7 +170,7 @@ export const Footer = () => {
           <span className="text-muted-foreground">- All Rights Reserved</span>
         </p>
         <p className="text-muted-foreground text-sm">
-          Website Designed & Developed by{" "}
+          Website design & developed by{" "}
           <FooterTrackedLink
             aria-label={`Visit ${COMPANY_INFO.developer.name} website (opens in new tab)`}
             className="rounded text-primary-background transition-colors hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
