@@ -11,14 +11,14 @@ import { ClientsLogos } from "../components/clients-roll";
 
 export const Hero = () => {
   return (
-    <header className="overflow-hidden bg-linear-to-b from-[#E5CAFF]/30 to-transparent" role="banner">
+    <header className="bg-linear-to-b from-[#E5CAFF]/30 to-transparent" role="banner">
       <div className="container relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-4 pt-24 pl-4 md:pl-6 lg:grid-cols-2 lg:pt-24 lg:pl-8">
-        <div className="">
+        <div className="order-last text-center sm:order-first sm:text-start">
           <Badge>
             <BadgeDot />
             Your Complete Technology & Trading Partner
           </Badge>
-          <h1 className="mt-3 font-bold text-3xl leading-[1.15] md:text-4xl lg:text-5xl">
+          <h1 className="mt-3 font-bold text-4xl leading-[1.15] md:text-5xl">
             Making Technology
             <br /> Work for You <br />
             <span className="text-primary">Faster, Smarter, Better.</span>
@@ -27,11 +27,11 @@ export const Hero = () => {
             From IT infrastructure to trading solutions, software, and digital marketing, we deliver innovation,
             reliability, and growth for your business.
           </p>
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <div className="flex items-start gap-3 sm:items-center sm:gap-4">
             <Button
               aria-label="Contact us to discuss your technology needs"
               asChild
-              className="group w-full sm:w-auto"
+              className="group w-full max-md:flex-1 sm:w-auto"
               size="lg"
             >
               <Link href="/contact">
@@ -50,7 +50,7 @@ export const Hero = () => {
             </Button>
             <Button
               aria-label="View our portfolio of successful projects"
-              className="w-full sm:w-auto"
+              className="w-full max-md:flex-1 sm:w-auto"
               size="lg"
               variant="outline"
             >
@@ -60,14 +60,20 @@ export const Hero = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          <Image alt="" className="size-96 md:size-[80%]" height={500} src="/images/hero-directls.svg" width={500} />
+          <Image
+            alt=""
+            className="size-68 sm:size-96 md:size-[80%]"
+            height={500}
+            src="/images/hero-directls.svg"
+            width={500}
+          />
         </div>
       </div>
       <section
         aria-labelledby="clients-heading"
         className="container mt-8 max-w-7xl px-4 pb-36 text-center md:mt-12 md:px-6 md:pb-20 lg:mt-14 lg:px-8"
       >
-        <h2 className="mb-3 text-xl" id="clients-heading">
+        <h2 className="mb-3 md:text-xl" id="clients-heading">
           Trusted by 200+ Businesses in the UAE
         </h2>
         <ClientsLogos />

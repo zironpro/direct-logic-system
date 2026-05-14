@@ -83,7 +83,7 @@ const LogoRow = ({ logos, index, activeIndex }: LogoRowProps) => {
   return (
     <AnimatePresence>
       {isActive && (
-        <div className="absolute top-0 left-0 grid h-full w-full grid-cols-3 items-center justify-center gap-6 px-4 md:gap-x-4 md:px-6 lg:grid-cols-6">
+        <div className="absolute inset-0 grid w-full grid-cols-3 items-center justify-center gap-6 px-4 md:gap-x-4 md:px-6 lg:grid-cols-6">
           {logos.map((logo, logoIndex) => (
             <motion.div
               animate={{
@@ -91,7 +91,7 @@ const LogoRow = ({ logos, index, activeIndex }: LogoRowProps) => {
                 opacity: 1,
                 filter: "blur(0px)",
               }}
-              className="grid scale-70 place-content-center sm:scale-85 md:scale-75 lg:scale-80"
+              className="grid h-20 place-content-center overflow-hidden rounded-md bg-white p-3 shadow-sm"
               exit={{ y: -40, opacity: 0, filter: "blur(10px)" }}
               initial={{ y: 40, opacity: 0, filter: "blur(10px)" }}
               key={logoIndex}
@@ -103,11 +103,10 @@ const LogoRow = ({ logos, index, activeIndex }: LogoRowProps) => {
             >
               <Image
                 alt={`Client logo ${logoIndex + 1}`}
-                className="h-auto w-auto object-contain"
-                height={80}
+                className="object-contain"
+                fill
                 priority={logoIndex < 2}
                 src={logo}
-                width={150}
               />
             </motion.div>
           ))}

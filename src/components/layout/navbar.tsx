@@ -18,12 +18,12 @@ export const Navbar = () => {
     <header className="fixed top-1.5 left-1/2 z-999 mx-auto min-w-[95%] -translate-x-1/2 sm:top-3 lg:min-w-3xl">
       <nav
         aria-label="Main navigation"
-        className="rounded-[calc(var(--radius)+var(--spacing)_*_1)] border-card border-b bg-background/80 p-1 shadow-primary-foreground/10 shadow-xl backdrop-blur-2xl"
+        className="rounded-[calc(var(--radius)+var(--spacing)*1)] border-card border-b bg-background/80 p-1 shadow-primary-foreground/10 shadow-xl backdrop-blur-2xl"
         role="navigation"
       >
         <div className="flex items-center justify-between">
           {/* Logo Section */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link
               aria-label="Direct Logic Systems - Home"
               className="flex items-center gap-2 rounded-md transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
