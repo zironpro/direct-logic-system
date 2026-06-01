@@ -22,7 +22,7 @@ export const Footer = () => {
               <li>
                 <FooterTrackedLink
                   aria-label="Visit our LinkedIn page"
-                  className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="flex size-9 items-center justify-center rounded-lg border bg-card text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground hover:shadow-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   cta_id="footer_social_linkedin"
                   href={SOCIAL_LINKS.linkedin}
                   rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export const Footer = () => {
               <li>
                 <FooterTrackedLink
                   aria-label="Visit our Facebook page"
-                  className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="flex size-9 items-center justify-center rounded-lg border bg-card text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground hover:shadow-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   cta_id="footer_social_facebook"
                   href={SOCIAL_LINKS.facebook}
                   rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export const Footer = () => {
               <li>
                 <FooterTrackedLink
                   aria-label="Visit our Instagram page"
-                  className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="flex size-9 items-center justify-center rounded-lg border bg-card text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground hover:shadow-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   cta_id="footer_social_instagram"
                   href={SOCIAL_LINKS.instagram}
                   rel="noopener noreferrer"
@@ -58,7 +58,7 @@ export const Footer = () => {
               <li>
                 <FooterTrackedLink
                   aria-label="Visit our X (Twitter) page"
-                  className="flex size-9 items-center justify-center rounded-lg border text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="flex size-9 items-center justify-center rounded-lg border bg-card text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground hover:shadow-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   cta_id="footer_social_x"
                   href={SOCIAL_LINKS.x}
                   rel="noopener noreferrer"
@@ -164,12 +164,12 @@ export const Footer = () => {
       </div>
 
       {/* Bottom section with copyright and credits */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 py-3 text-center max-sm:mb-0 sm:flex-row sm:gap-0 sm:text-left">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 py-3 text-center max-sm:mb-0 sm:flex-row sm:gap-0 sm:text-left">
         <p className="text-sm">
           © {new Date().getFullYear()} {COMPANY_INFO.name}{" "}
           <span className="text-muted-foreground">- All Rights Reserved</span>
         </p>
-        <p className="text-muted-foreground text-sm">
+        <p className="sr-only text-muted-foreground text-sm">
           Website design & developed by{" "}
           <FooterTrackedLink
             aria-label={`Visit ${COMPANY_INFO.developer.name} website (opens in new tab)`}
