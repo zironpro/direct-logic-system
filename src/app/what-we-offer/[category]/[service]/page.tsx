@@ -199,7 +199,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 				<div className="relative grid grid-cols-1 gap-8 lg:grid-cols-3">
 					{/* Main Content */}
 
-					<article className="prose prose-lg lg:col-span-2">
+					<article className="prose prose-lg prose-headings:font-medium lg:col-span-2">
 						<MDXContent
 							components={{
 								Image: (props) => <Image {...props} className="rounded-md" height={480} width={720} />,
