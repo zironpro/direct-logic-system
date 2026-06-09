@@ -1,13 +1,13 @@
 {
-  "name": "Direct Logic Systems",
-  "short_name": "DLS",
-  "description": "Direct Logic Systems delivers comprehensive IT solutions, trading services, and digital innovation in Dubai, UAE.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en",
-  "categories": ["business", "productivity", "utilities"]
+	"name": "Direct Logic Systems",
+	"short_name": "DLS",
+	"description": "Direct Logic Systems delivers comprehensive IT solutions, trading services, and digital innovation in Dubai, UAE.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#000000",
+	"orientation": "portrait-primary",
+	"scope": "/",
+	"lang": "en",
+	"categories": ["business", "productivity", "utilities"]
 }

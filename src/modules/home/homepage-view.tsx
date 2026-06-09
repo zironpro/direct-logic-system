@@ -4,16 +4,16 @@ import { Faq } from "@/components/global/faq";
 import { About, Hero, Portfolio, Services, Solutions, Testimonials } from "@/modules/home/sections";
 
 export const HomepageView = () => {
-  return (
-    <main className="relative overflow-hidden">
-      <Hero />
-      <About />
-      <Services />
-      <Solutions />
-      <Portfolio />
-      <Testimonials />
-      <Faq />
-      <Cta />
-    </main>
-  );
+	return (
+		<main className="relative overflow-hidden">
+			<Hero />
+			<About />
+			<Services />
+			<Solutions />
+			<Portfolio />
+			<Testimonials />
+			<Faq />
+			<Cta />
+		</main>
+	);
 };
