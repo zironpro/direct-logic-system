@@ -24,6 +24,7 @@ import { BASE_URL } from "@/data/site-config";
 import { createHeadingComponents, extractHeadings } from "@/lib/mdx-utils";
 import { getCategoriesWithMetadata, getServiceBySlug, getServicesByCategory } from "@/modules/services/actions";
 import { getCategoryMetadata } from "@/modules/services/categories";
+import { Brand } from "@/modules/services/components/brand";
 
 interface Params {
 	category: string;
@@ -199,11 +200,13 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 				<div className="relative grid grid-cols-1 gap-8 lg:grid-cols-3">
 					{/* Main Content */}
 
-					<article className="prose prose-lg prose-headings:font-medium lg:col-span-2">
+					<article className="prose prose-lg lg:col-span-2">
 						<MDXContent
 							components={{
-								Image: (props) => <Image {...props} className="rounded-md" height={480} width={720} />,
 								...headingComponents,
+								Brand,
+								Image: (props) => <Image {...props} className="rounded-md" height={480} width={720} />,
+								a: (props) => <Link {...props} className="text-primary underline" />,
 							}}
 							source={content}
 						/>
