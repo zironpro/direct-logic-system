@@ -15,7 +15,7 @@ export const SectionHeader = ({ title, description, badge, variant, link }: Prop
   return (
     <header className="relative z-10 grid grid-cols-1 items-start gap-4 md:grid-cols-2 md:items-center md:gap-6 lg:gap-12">
       <div className="space-y-2">
-        <Badge variant={variant}>
+        <Badge className="capitalize" variant={variant}>
           <BadgeDot />
           {badge}
         </Badge>

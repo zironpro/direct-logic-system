@@ -156,7 +156,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
   const headingComponents = createHeadingComponents();
 
   return (
-    <main className="relative min-h-svh overflow-hidden pt-20">
+    <main className="relative min-h-svh overflow-hidden pt-20 lg:overflow-visible">
       <BackgroundLeft aria-hidden="true" className="-top-20 -left-20 z-1 md:top-0 md:left-0" />
       <BackgroundRight aria-hidden="true" className="-top-20 -right-20 z-1 md:top-0 md:right-0" />
 
@@ -168,7 +168,11 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </div>
         )}
 
-        <SectionHeader badge={category} description={metadata.meta.description} title={metadata.title} />
+        <SectionHeader
+          badge={category.replace(/-/g, " ")}
+          description={metadata.meta.description}
+          title={metadata.title}
+        />
         {/* Breadcrumb Navigation */}
         <Breadcrumb>
           <BreadcrumbList>
@@ -196,20 +200,20 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           </BreadcrumbList>
         </Breadcrumb>
         <Separator />
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Main Content */}
 
-          <article className="prose prose-lg order-2 lg:order-1 lg:col-span-2">
+          <article className="prose prose-lg lg:col-span-2">
             <MDXContent
               components={{
-                Image: (props) => <Image {...props} className="rounded-md" />,
+                Image: (props) => <Image {...props} className="rounded-md" height={480} width={720} />,
                 ...headingComponents,
               }}
               source={content}
             />
           </article>
 
-          <TableOfContents className="order-1 lg:order-2" headings={headings} />
+          <TableOfContents headings={headings} />
         </div>
       </section>
 

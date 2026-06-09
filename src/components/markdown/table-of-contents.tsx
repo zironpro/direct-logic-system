@@ -59,12 +59,12 @@ export function TableOfContents({ headings, className }: TableOfContentsProps) {
   }
 
   return (
-    <div className={cn("h-fit space-y-4 lg:sticky lg:top-20", className)}>
+    <div className={cn("sticky top-20 h-fit", className)}>
       <Card>
         <CardHeader className="gap-0 px-2">
           <CardTitle className="pb-1 font-normal text-muted-foreground text-sm">Table of Contents</CardTitle>
         </CardHeader>
-        <CardContent className="p-3">
+        <CardContent className="p-3 lg:max-h-[calc(100vh-5rem)] lg:overflow-auto">
           <nav className="space-y-2">
             {headings.map((heading, i) => (
               <Link
