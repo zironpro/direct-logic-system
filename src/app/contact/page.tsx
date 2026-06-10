@@ -206,17 +206,8 @@ export default function ContactPage() {
 								</h2>
 								<p className="text-muted-foreground text-sm leading-relaxed">Call our team Mon-Sat 8:00am-5:00pm.</p>
 								<div className="flex gap-3">
-									<IconPhone className="mt-1.5 size-4 shrink-0" />
-									<ul className="space-y-1" role="list">
-										<li>
-											<Link
-												aria-label="Call us at +971 4334 8774"
-												className="flex items-center gap-2 rounded-md p-1 transition-colors hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-												href="tel:+97143348774"
-											>
-												+971 4334 8774
-											</Link>
-										</li>
+									<IconPhone className="mt-2 size-4 shrink-0" />
+									<ul className="space-y-1">
 										<li>
 											<Link
 												aria-label="Call us at +971 5067 56708"

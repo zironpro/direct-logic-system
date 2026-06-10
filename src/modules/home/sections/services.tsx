@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowRight } from "lucide-react";
@@ -5,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/layout/section-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 import { IconArrowUpRight } from "@/assets/icons/arrows";
 
@@ -12,6 +14,59 @@ import { getCategoriesWithMetadata, getServicesByCategory } from "@/modules/serv
 
 export const Services = () => {
 	const allCategories = getCategoriesWithMetadata();
+
+	const brandLogos = [
+		"3cx.jpeg",
+		"comelit.jpeg",
+		// "belden.jpeg",
+		"commscope.png",
+		"crucial.png",
+		"dell.svg",
+		"delta.svg",
+		"dinstar.png",
+		"dyson.svg",
+		"elan.png",
+		"fanvil.png",
+		"ita-power.png",
+		"keline.svg",
+		"leviton.svg",
+		"lg-logo.svg",
+		"logitech.svg",
+		"micron.svg",
+		"nintendo.jpeg",
+		"panduit.svg",
+		"playstation.svg",
+		"rm.svg",
+		"samsung.svg",
+		"sandisk.svg",
+		"seagate.svg",
+		"snom.svg",
+		"Sony_Logo_0.svg",
+		"toshiba.svg",
+		"ultrasonic-audio.png",
+		"viewsonic.svg",
+		"wd.svg",
+		"yealink.png",
+	];
+
+	function getBrandLabel(file: string) {
+		const base = file.replace(/\.[^.]+$/, "");
+		const overrides: Record<string, string> = {
+			"3cx": "3CX",
+			wd: "Western Digital",
+			Sony_Logo_0: "Sony",
+			"lg-logo": "LG",
+			"ita-power": "ITA Power",
+			rm: "R&M",
+			playstation: "PlayStation",
+			nintendo: "Nintendo",
+			seagate: "Seagate",
+			sandisk: "SanDisk",
+			samsung: "Samsung",
+		};
+		if (overrides[base]) return overrides[base];
+		return base.replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+	}
 
 	return (
 		<section
@@ -32,12 +87,13 @@ export const Services = () => {
 
 					return (
 						<Card key={category.id} role="listitem">
+							<Link className="absolute inset-0 z-10" href={`/what-we-offer/${category.id}`} />
 							<CardContent className="flex h-full flex-col justify-between gap-4">
 								<CardHeader>
 									<CardTitle>{category.title}</CardTitle>
 									<CardDescription>{category.description}</CardDescription>
 								</CardHeader>
-								<ul className="flex flex-wrap gap-2">
+								<ul className="relative z-20 flex flex-wrap gap-2">
 									{displayedServices.map(({ title, slug }) => (
 										<li key={slug}>
 											<Link
@@ -91,6 +147,32 @@ export const Services = () => {
 					</Link>
 				</Button>
 			</div>
+
+			<TooltipProvider delayDuration={10}>
+				<div className="mt-10">
+					<h3 className="mb-4 text-center font-semibold text-lg">Brands we work with</h3>
+
+					<div className="grid grid-cols-3 items-center justify-items-center gap-4 md:grid-cols-6">
+						{brandLogos.map((file) => (
+							<Tooltip key={file}>
+								<TooltipTrigger asChild>
+									<div className="flex aspect-video h-24 items-center justify-center rounded-sm border bg-card shadow-md/3">
+										<div className="relative aspect-video h-12">
+											<Image
+												alt={getBrandLabel(file)}
+												className="rounded-sm object-contain"
+												fill
+												src={`/images/brands/${file}`}
+											/>
+										</div>
+									</div>
+								</TooltipTrigger>
+								<TooltipContent>{getBrandLabel(file)}</TooltipContent>
+							</Tooltip>
+						))}
+					</div>
+				</div>
+			</TooltipProvider>
 		</section>
 	);
 };
