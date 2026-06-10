@@ -131,7 +131,13 @@ export function getCategories(): string[] {
 		}
 	}
 
-	return Array.from(categories).sort();
+	const arr = Array.from(categories);
+	const preferred = "trading-solutions";
+	if (arr.includes(preferred)) {
+		return [preferred, ...arr.filter((c) => c !== preferred).sort()];
+	}
+
+	return arr.sort();
 }
 
 export function getServicesByCategory(category: string, limit?: number): ServiceMetadata[] {
