@@ -205,6 +205,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 							components={{
 								...headingComponents,
 								Brand,
+								img: (props) => <Image {...props} className="rounded-md" height={480} width={720} />,
 								Image: (props) => <Image {...props} className="rounded-md" height={480} width={720} />,
 								a: (props) => <Link {...props} className="text-primary underline" />,
 							}}
