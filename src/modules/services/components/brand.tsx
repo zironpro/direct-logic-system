@@ -15,7 +15,7 @@ export function Brand({ children, logo, image, title }: BrandProps) {
 				<div className="mb-3 flex items-center gap-2 md:gap-3">
 					{logo && (
 						<div className="flex aspect-5/4 w-10 items-center justify-center gap-2 rounded-sm border bg-card sm:w-12 md:w-16">
-							<Image alt={title} className="h-auto w-[70%] rounded" height={42} src={logo} width={42} />
+							<Image alt={`Logo of ${title}`} className="h-auto w-[70%] rounded" height={42} src={logo} width={42} />
 						</div>
 					)}
 					<strong className="font-medium text-lg sm:text-xl md:text-2xl">{title}</strong>
