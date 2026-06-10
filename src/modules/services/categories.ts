@@ -5,6 +5,13 @@ export interface CategoryMetadata {
 }
 
 export const CATEGORIES: Record<string, CategoryMetadata> = {
+	"trading-solutions": {
+		id: "trading-solutions",
+		title: "Trading Solutions",
+		description:
+			"Source electronics, IT equipment, and industrial products from trusted global suppliers with quality assurance and competitive pricing.",
+	},
+
 	"it-solutions": {
 		id: "it-solutions",
 		title: "IT Services & Support",
@@ -12,24 +19,12 @@ export const CATEGORIES: Record<string, CategoryMetadata> = {
 			"From strategic IT consulting to reliable infrastructure and fast 2-hour on-site support, we keep your systems secure and efficient.",
 	},
 
-	"trading-solutions": {
-		id: "trading-solutions",
-		title: "Trading Solutions",
-		description:
-			"Source electronics, IT equipment, and industrial products from trusted global suppliers with quality assurance and competitive pricing.",
-	},
 	"software-marketing": {
 		id: "software-marketing",
 		title: "Software & Digital Marketing",
 		description:
 			"Custom software development, modern web solutions, and data-driven marketing campaigns to boost your digital presence and business growth.",
 	},
-	// To add a new category, simply add it here:
-	// "new-category": {
-	//   id: "new-category",
-	//   title: "New Category Title",
-	//   description: "Custom description for the new category that will appear on the website."
-	// }
 };
 
 export function getCategoryMetadata(categoryId: string): CategoryMetadata {
