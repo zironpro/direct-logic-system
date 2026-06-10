@@ -10,7 +10,7 @@ interface BrandProps {
 export function Brand({ children, logo, image, title }: BrandProps) {
 	return (
 		<div className="not-prose mb-6 grid grid-cols-2 gap-4 md:gap-6">
-			{image && <Image alt={title} className="rounded-md border" height={264} src={image} width={352} />}
+			{image && <Image alt={title} className="aspect-4/3 rounded-md border object-cover" height={280} src={image} width={380} />}
 			<div className="py-1 md:py-4">
 				<div className="mb-3 flex items-center gap-2 md:gap-3">
 					{logo && (
@@ -20,7 +20,7 @@ export function Brand({ children, logo, image, title }: BrandProps) {
 					)}
 					<strong className="font-medium text-lg sm:text-xl md:text-2xl">{title}</strong>
 				</div>
-				<div className="text-sm md:text-xl">{children}</div>
+				<div className="text-balance text-sm md:text-xl">{children}</div>
 			</div>
 		</div>
 	);

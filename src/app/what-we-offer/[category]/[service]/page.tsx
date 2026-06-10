@@ -197,10 +197,10 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 					</BreadcrumbList>
 				</Breadcrumb>
 				<Separator />
-				<div className="relative grid grid-cols-1 gap-8 lg:grid-cols-3">
+				<div className="p relative grid grid-cols-1 gap-8 prose-headings:text-balance prose-p:text-pretty lg:grid-cols-[1fr_20rem]">
 					{/* Main Content */}
 
-					<article className="prose prose-lg lg:col-span-2">
+					<article className="prose prose-lg max-w-none">
 						<MDXContent
 							components={{
 								...headingComponents,
