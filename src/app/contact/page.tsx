@@ -16,7 +16,7 @@ import { ContactForm } from "@/modules/contact/components/contact-form";
 export const metadata: Metadata = {
 	title: "Contact Direct Logic Systems - Get in Touch for IT & Digital Solutions",
 	description:
-		"Contact Direct Logic Systems in Dubai, UAE for expert IT services, trading solutions, and digital marketing. Call +971 4334 8774 or email sales@directls.com today.",
+		"Contact Direct Logic Systems in Dubai, UAE for expert IT services, trading solutions, and digital marketing. Call +971 50 282 9687 or email sales@directls.com today.",
 	keywords: [
 		"contact Direct Logic Systems",
 		"IT services Dubai contact",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Contact Direct Logic Systems - Get in Touch for IT & Digital Solutions",
 		description:
-			"Contact Direct Logic Systems in Dubai, UAE for expert IT services, trading solutions, and digital marketing. Call +971 4334 8774 or email sales@directls.com today.",
+			"Contact Direct Logic Systems in Dubai, UAE for expert IT services, trading solutions, and digital marketing. Call +971 50 282 9687 or email sales@directls.com today.",
 		type: "website",
 		locale: "en_US",
 		siteName: "Direct Logic Systems",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Contact Direct Logic Systems - Get in Touch for IT & Digital Solutions",
 		description:
-			"Contact Direct Logic Systems in Dubai, UAE for expert IT services, trading solutions, and digital marketing. Call +971 4334 8774 or email sales@directls.com today.",
+			"Contact Direct Logic Systems in Dubai, UAE for expert IT services, trading solutions, and digital marketing. Call +971 50 282 9687 or email sales@directls.com today.",
 	},
 	robots: {
 		index: true,
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 	},
 	other: {
 		"contact-info": "sales@directls.com",
-		phone: "+971 4334 8774",
+		phone: "+971 50 282 9687",
 		address: "Oud Metha Road, Dubai, UAE",
 		"business-hours": "Mon-Sat 8:00am-5:00pm",
 	},
@@ -89,7 +89,7 @@ export default function ContactPage() {
 						contactPoint: [
 							{
 								"@type": "ContactPoint",
-								telephone: "+971-4334-8774",
+								telephone: "+971-50-282-9687",
 								contactType: "customer service",
 								availableLanguage: "English",
 								hoursAvailable: {
@@ -98,18 +98,6 @@ export default function ContactPage() {
 									opens: "08:00",
 									closes: "17:00",
 								},
-							},
-							{
-								"@type": "ContactPoint",
-								telephone: "+971-5067-56708",
-								contactType: "customer service",
-								availableLanguage: "English",
-							},
-							{
-								"@type": "ContactPoint",
-								telephone: "+971-501-35-6861",
-								contactType: "customer service",
-								availableLanguage: "English",
 							},
 						],
 						email: "sales@directls.com",
@@ -210,20 +198,11 @@ export default function ContactPage() {
 									<ul className="space-y-1">
 										<li>
 											<Link
-												aria-label="Call us at +971 5067 56708"
+												aria-label="Call us at +971 50 282 9687"
 												className="flex items-center gap-2 rounded-md p-1 transition-colors hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-												href="tel:+971506756708"
+												href="tel:+971502829687"
 											>
-												+971 5067 56708
-											</Link>
-										</li>
-										<li>
-											<Link
-												aria-label="Call us at +971 501 35 6861"
-												className="flex items-center gap-2 rounded-md p-1 transition-colors hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-												href="tel:+971501356861"
-											>
-												+971 501 35 6861
+												+971 50 282 9687
 											</Link>
 										</li>
 									</ul>

@@ -6,8 +6,7 @@ export const SOCIAL_LINKS = {
 } as const;
 
 export const CONTACT_INFO = {
-	phone1: "+971 56 408 2145",
-	phone2: "+971 55 463 7002",
+	phone1: "+971 50 282 9687",
 	email: "sales@directls.ae",
 } as const;
 

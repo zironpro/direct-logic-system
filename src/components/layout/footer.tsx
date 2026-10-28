@@ -140,16 +140,6 @@ export const Footer = () => {
 							</li>
 							<li>
 								<FooterTrackedLink
-									aria-label={`Call us at ${CONTACT_INFO.phone2}`}
-									className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-									cta_id="footer_contact_phone_secondary"
-									href={`tel:${CONTACT_INFO.phone2.replace(/\s/g, "")}`}
-								>
-									{CONTACT_INFO.phone2}
-								</FooterTrackedLink>
-							</li>
-							<li>
-								<FooterTrackedLink
 									aria-label={`Email us at ${CONTACT_INFO.email}`}
 									className="rounded transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
 									cta_id="footer_contact_email"

@@ -132,7 +132,7 @@ export default function RootLayout({
 							},
 							contactPoint: {
 								"@type": "ContactPoint",
-								telephone: "+971-4334-8774",
+								telephone: "+971-50-282-9687",
 								contactType: "customer service",
 								availableLanguage: "English",
 								hoursAvailable: {
